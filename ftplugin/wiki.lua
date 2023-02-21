@@ -5,5 +5,5 @@ vim.opt_local.textwidth = 80
 -- Journal
 vim.keymap.set("n", "<leader>wji", "<plug>(wiki-journal-index)")
 
--- Wiki
+-- Don't really need this to find stuff. Use telescope + harpoon instead.
 vim.keymap.set("n", "<leader>wf", "<plug>(wiki-fzf-pages)")
