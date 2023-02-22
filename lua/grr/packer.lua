@@ -56,7 +56,19 @@ return require('packer').startup(function(use)
     use('vim-pandoc/vim-pandoc')
 
     -- For Note taking
-    use('lervag/wiki')
+    -- use('lervag/wiki')
+     use({'lervag/wiki',
+       config = function()
+         vim.g.wiki_export = {
+           args = '',
+           from_format = 'markdown',
+           ext = 'pdf',
+           view = true,
+           output = fnamemodify(tempname(), '/mnt/c/Users/phili/OneDrive/wiki/pdf')
+         }
+       end
+     })
+
     use('lervag/wiki-ft.vim')
 
     -- Fuzzy finder
