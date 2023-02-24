@@ -1,3 +1,15 @@
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
@@ -56,21 +68,25 @@ return require('packer').startup(function(use)
     use('vim-pandoc/vim-pandoc')
 
     -- For Note taking
-    -- use('lervag/wiki')
-     use({'lervag/wiki',
-       config = function()
-         vim.g.wiki_export = {
-           args = '',
-           from_format = 'markdown',
-           ext = 'pdf',
-           view = true,
-           output = fnamemodify(tempname(), '/mnt/c/Users/phili/OneDrive/wiki/pdf')
-         }
-       end
-     })
+    use('lervag/wiki')
+     --use({'lervag/wiki',
+     --  config = function()
+     --    vim.g.wiki_export = {
+     --      args = '',
+     --      from_format = 'markdown',
+     --      ext = 'pdf',
+     --      view = true,
+     --      output = fnamemodify(tempname(), '/mnt/c/Users/ptr/OneDrive/wiki/pdf')
+     --    }
+     --  end
+     --})
 
     use('lervag/wiki-ft.vim')
 
     -- Fuzzy finder
     use('junegunn/fzf')
+
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
