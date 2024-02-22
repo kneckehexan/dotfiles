@@ -1,1 +1,1 @@
-require("grr")
+require("config.lazy")

@@ -1,3 +1,9 @@
+local u = require("util")
+local m, f = u.cmd_map, u.key_map
+
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+--f("<leader>pv", "vim.cmd.Ex")
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -34,3 +40,44 @@ vim.keymap.set("i", "<F6>", "<C-R>=strftime('%T')<CR>")
 -- Insert date and time
 vim.keymap.set("n", "<F7>", '"=strftime("%c")<CR>P')
 vim.keymap.set("i", "<F7>", "<C-R>=strftime('%c')<CR>")
+
+vim.keymap.set('n', '<leader>we', '<plug>wiki-export')
+
+--f("J", ":m '>+1<CR>gv=gv", "v")
+--f("K", ":m '<-2<CR>gv=gv", "v")
+--
+--f("J", "mzJ`z")
+--f("<C-d>", "<C-d>zz")
+--f("<C-u>", "<C-u>zz")
+--f("n", "nzzzv")
+--f("N", "Nzzzv")
+--
+--f("<leader>p", "\"_dP", "x")
+--
+--f("<leader>y", "\"+y", {"n", "v"})
+--f("<leader>Y", "\"+Y")
+--
+---- Can't get this to work yet. Perhaps tmux config is necessary
+----m("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+--f("<leader>f", function()
+--    vim.lsp.buf.format()
+--end)
+--
+--f("<C-k", "<cmd>cnext<CR>zz")
+--f("<C-j", "<cmd>cprev<CR>zz")
+--f("<leader>k", "<cmd>lnext<CR>zz")
+--f("<leader>j", "<cmd>lprev<CR>zz")
+--
+--f("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+--
+---- Insert current date YYYY-MM-DD
+--f("<F5>", '"=strftime("%Y-%m-%d")<CR>P')
+--f("<F5>", "<C-R>=strftime('%Y-%m-%d')<CR>", "i")
+---- Insert current time
+--f("<F6>", '"=strftime("%T")<CR>P')
+--f("<F6>", "<C-R>=strftime('%T')<CR>", "i")
+---- Insert date and time
+--f("<F7>", '"=strftime("%c")<CR>P')
+--f("<F7>", "<C-R>=strftime('%c')<CR>", "i")
+--
+--f('<leader>we', '<plug>wiki-export')
