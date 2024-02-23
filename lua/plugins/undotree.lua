@@ -1,3 +1,8 @@
 return {
-  'mbbill/undotree'
+  'mbbill/undotree',
+  keys = {
+    {
+      "<leader>u", ":UndotreeShow<CR>", desc = "Open UndoTree", silent = true,
+    }
+  }
 }
