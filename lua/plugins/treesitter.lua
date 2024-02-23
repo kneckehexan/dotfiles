@@ -11,7 +11,8 @@ local config = function()
       "lua",
       "vim",
       "help",
-      "latex"
+      "latex",
+      "markdown",
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)

@@ -173,7 +173,7 @@ local config = function()
 		"fzf",
 		"ui-select",
 		-- "harpoon",
-		"do-the-needful",
+		--"do-the-needful",
 		"chat-gypsy",
 		"workspaces",
 		"lazy",
