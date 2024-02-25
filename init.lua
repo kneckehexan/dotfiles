@@ -1,1 +1,2 @@
-require("config.lazy")
+require("grr.core")
+require("grr.lazy")
