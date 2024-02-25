@@ -1,4 +1,8 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+-- vim.cmd.Ex stopped working after installing nvim-tree
+--vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 --f("<leader>pv", "vim.cmd.Ex")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

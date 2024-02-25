@@ -1,4 +1,4 @@
-local opt, g = vim.opt, vim.g
+local opt  = vim.opt
 
 local is_wsl = vim.fn.has('wsl') == 1
 
@@ -19,11 +19,6 @@ if is_wsl then
     cache_enabled = 0,
   }
 end
-
-g.mapleader = " "
-g.maplocalleader = " "
-
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 opt.nu = true
 opt.relativenumber = true
