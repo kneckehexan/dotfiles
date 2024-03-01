@@ -11,6 +11,7 @@ return {
 		treesitter.setup({
 			highlight = {
 				enable = true,
+				disable = { "tex", "latex" },
 			},
 			indent = { enable = true },
 			ensure_installed = {
@@ -23,7 +24,6 @@ return {
 				"lua",
 				"vim",
 				"vimdoc",
-				"latex",
 				"markdown",
 				"markdown_inline",
 				"lua",
