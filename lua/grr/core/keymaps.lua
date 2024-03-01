@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 -- vim.cmd.Ex stopped working after installing nvim-tree
 vim.keymap.set("n", "<leader>pv", "<CMD>Explore<CR>")
