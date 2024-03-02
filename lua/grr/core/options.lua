@@ -1,24 +1,32 @@
-local opt  = vim.opt
+local opt = vim.opt
 
-local is_wsl = vim.fn.has('wsl') == 1
+local is_wsl = vim.fn.has("wsl") == 1
 
 -- WSL Clipboard support
 if is_wsl then
-  -- This is NeoVim's recommended way to solve clipboard sharing if you use WSL
-  -- See: https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
-  vim.g.clipboard = {
-    name = 'WslClipboard',
-    copy = {
-      ['+'] = 'clip.exe',
-      ['*'] = 'clip.exe',
-    },
-    paste = {
-      ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-      ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    },
-    cache_enabled = 0,
-  }
+	-- This is NeoVim's recommended way to solve clipboard sharing if you use WSL
+	-- See: https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
+	vim.g.clipboard = {
+		name = "WslClipboard",
+		copy = {
+			["+"] = "clip.exe",
+			["*"] = "clip.exe",
+		},
+		paste = {
+			["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+			["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+		},
+		cache_enabled = 0,
+	}
 end
+
+local group = vim.api.nvim_create_augroup("Markdown Wrap Settings", { clear = true })
+
+vim.api.nvim_create_autocmd("BufReadPre", {
+	pattern = { "*.md", "*.wiki" },
+	group = group,
+	command = "setlocal textwidth=80",
+})
 
 opt.nu = true
 opt.relativenumber = true
@@ -29,7 +37,7 @@ opt.shiftwidth = 2
 opt.expandtab = true
 opt.smartindent = true
 
-opt.wrap = false
+opt.wrap = true
 
 opt.swapfile = false
 
