@@ -28,7 +28,7 @@ return {
 
 		require("ibl").setup({
 			indent = {
-				char = { "\u{2502}" },
+				char = { "│" },
 				highlight = highlight,
 			},
 			scope = {
