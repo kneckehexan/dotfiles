@@ -61,7 +61,7 @@ return {
 						cond = lazy_status.has_updates,
 						color = { fg = "#ff9e64" },
 					},
-					{ "os.date('%a, %d %b, %Y')" },
+					{ "os.date('%a, %d %b, %Y \u{007C} %H:%M:%S')" },
 					{ "encoding" },
 					{ "fileformat" },
 					{ "filetype" },
