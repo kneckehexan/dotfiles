@@ -7,7 +7,7 @@ return {
 		{
 			"<tab>",
 			function()
-				return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab"
+				return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
 			end,
 			expr = true,
 			silent = true,
@@ -27,5 +27,8 @@ return {
 			end,
 			mode = { "i", "s" },
 		},
+	},
+	setup = {
+		store_selection_keys = "<Tab>",
 	},
 }
