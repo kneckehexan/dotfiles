@@ -22,7 +22,7 @@ end
 
 local group = vim.api.nvim_create_augroup("Markdown Wrap Settings", { clear = true })
 
-vim.api.nvim_create_autocmd("BufReadPre", {
+vim.api.nvim_create_autocmd("insertEnter", {
 	pattern = { "*.md", "*.wiki" },
 	group = group,
 	command = "setlocal textwidth=80",
