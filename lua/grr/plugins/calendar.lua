@@ -1,14 +1,21 @@
+local env = require("env")
+local g = vim.g
+
 return {
 	"itchyny/calendar.vim",
 	keys = {
 		{ "<leader>c", "<CMD>Calendar -position=here<CR>", desc = "Open Calendar", silent = true },
 	},
 	config = function()
-		local g = vim.g
 		g.calendar_first_day = "monday"
 		g.calendar_date_endian = "big"
 		g.calendar_frame = "space"
 		g.calendar_week_number = 1
+		g.calendar_google_calendar = 1
+		g.calendar_google_task = 1
+		g.calendar_google_api_key = env.GOOGLE_API
+		g.calendar_google_client_id = env.GOOGLE_CLIENT_ID
+		g.calendar_google_client_secret = env.GOOGLE_CLIENT_SECRET
 
 		-- Enable pressing <CR> to go to corresponding Journal entry in Wiki.vim (lervag/wiki.vim)
 		vim.api.nvim_create_autocmd("FileType", {
