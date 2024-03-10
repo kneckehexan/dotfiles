@@ -1,0 +1,34 @@
+return {
+	"itchyny/calendar.vim",
+	keys = {
+		{ "<leader>c", "<CMD>Calendar -position=here<CR>", desc = "Open Calendar", silent = true },
+	},
+	config = function()
+		local g = vim.g
+		g.calendar_first_day = "monday"
+		g.calendar_date_endian = "big"
+		g.calendar_frame = "space"
+		g.calendar_week_number = 1
+
+		-- Enable pressing <CR> to go to corresponding Journal entry in Wiki.vim (lervag/wiki.vim)
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "calendar",
+			callback = function()
+				for lhs, rhs in pairs({
+					["<C-e>"] = "<C-^>",
+					["<C-u>"] = "<CMD>WinBufDelete<CR>",
+					["<CR>"] = function()
+						local year = vim.api.nvim_eval("b:calendar.day().get_year()")
+						local month = vim.api.nvim_eval("b:calendar.day().get_month()")
+						local day = vim.api.nvim_eval("b:calendar.day().get_day()")
+						---@diagnostic disable-next-line: redundant-parameter
+						local date = vim.fn.printf("%d-%0.2d-%0.2d", year, month, day)
+						vim.fn["wiki#journal#open"](date)
+					end,
+				}) do
+					vim.keymap.set("n", lhs, rhs, { noremap = true, buffer = true })
+				end
+			end,
+		})
+	end,
+}
