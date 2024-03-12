@@ -5,6 +5,12 @@ return {
 	"itchyny/calendar.vim",
 	keys = {
 		{ "<leader>c", "<CMD>Calendar -position=here<CR>", desc = "Open Calendar", silent = true },
+		{
+			"<leader>Cl",
+			"<CMD>Calendar -position=right -width=35 -view=day<CR>",
+			desc = "Open Calendar Right",
+			silent = true,
+		},
 	},
 	config = function()
 		g.calendar_first_day = "monday"
