@@ -39,4 +39,8 @@ return {
 		)
 	),
 	s({ trig = "url", descr = "Create URL" }, fmt("[link](<>)", { i(1, "Insert link here") }, { delimiters = "<>" })),
+	s(
+		{ trig = "wslopen", descr = "Create file link" },
+		fmt("[[wslopen:<>|<>]]", { i(1, "Relative path"), i(2, "Description") }, { delimiters = "<>" })
+	),
 }
