@@ -37,4 +37,4 @@ return {
 --   }
 -- }
 --
--- $(
+-- $(sumatrapdf.exe "$new_arg")
