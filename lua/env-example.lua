@@ -5,6 +5,7 @@ local env = {
 	GOOGLE_API = "longapikey",
 	GOOGLE_CLIENT_ID = "longgoogleoauthclientid",
 	GOOGLE_CLIENT_SECRET = "secret",
+	VIMTEX_WSL_VIEWER_SCRIPT = "/home/YOURUSERNAME/.local/bin/sumatrapdf.sh",
 }
 
 return env
