@@ -43,4 +43,27 @@ return {
 		{ trig = "wslopen", descr = "Create file link" },
 		fmt("[[wslopen:<>|<>]]", { i(1, "Relative path"), i(2, "Description") }, { delimiters = "<>" })
 	),
+	s(
+		{ trig = "samtal", descr = "Template for phone calls or similar" },
+		fmt(
+			[[
+      # <>samtal med <>, <>
+
+      Tid: <> - <>
+
+      ## Anteckningar
+
+      <>
+      ]],
+			{
+				i(1, "samtalstyp"),
+				i(2, "personnamn"),
+				i(3, "företag"),
+				i(4, "start"),
+				i(5, "slut"),
+				i(6, "anteckningar"),
+			},
+			{ delimiters = "<>" }
+		)
+	),
 }

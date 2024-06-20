@@ -30,6 +30,7 @@ return {
 				"dockerfile",
 				"gitignore",
 				"bash",
+				"rust",
 			},
 			incremental_selection = {
 				enable = true,
