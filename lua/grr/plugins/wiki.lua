@@ -10,7 +10,7 @@ return {
 	lazy = false,
 	init = function()
 		g.wiki_root = env.WIKI_PATH
-		g.wiki_filetypes = { "wiki" }
+		g.wiki_filetypes = { "wiki", "md" }
 		vim.keymap.set("n", "<leader>wj", ":WikiJournal<CR>", { silent = true })
 		vim.keymap.set("n", "<leader>wi", ":WikiIndex<CR>", { silent = true })
 		g.wiki_link_schemes = {

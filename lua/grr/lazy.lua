@@ -17,9 +17,9 @@ require("lazy").setup({
 	{ import = "grr.plugins" },
 	{ import = "grr.plugins.lsp" },
 }, {
-	install = {
-		colorscheme = { "gruvbox" },
-	},
+	--install = {
+	--	colorscheme = { "catppuccin-frappe" },
+	--},
 	checker = {
 		enabled = true,
 		notify = false,
