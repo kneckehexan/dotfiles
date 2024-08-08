@@ -5,6 +5,7 @@ return {
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
+		lazy = false,
 	},
 	{
 		"rebelot/kanagawa.nvim",
@@ -16,11 +17,14 @@ return {
 	{
 		"ellisonleao/gruvbox.nvim",
 		name = "gruvbox",
-		config = function()
-			require("gruvbox").setup({
-				transparent_mode = true,
-			})
-		end,
+		opts = {
+			transparent_mode = true,
+		},
+		-- config = function()
+		-- 	require("gruvbox").setup({
+		-- 		transparent_mode = true,
+		-- 	})
+		-- end,
 	},
 	--	{ "LazyVim/LazyVim", opts = {
 	--		colorscheme = "catppuccin",
