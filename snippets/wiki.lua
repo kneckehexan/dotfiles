@@ -25,7 +25,7 @@ return {
 		{ trig = "meet", descr = "Template for meetings" },
 		fmt(
 			[[
-      # Möte <>
+      #  Möte <>
 
       Tid & plats: <> - <>, <>
       Närvarande: <>
@@ -38,16 +38,19 @@ return {
 			{ delimiters = "<>" }
 		)
 	),
-	s({ trig = "url", descr = "Create URL" }, fmt("[link](<>)", { i(1, "Insert link here") }, { delimiters = "<>" })),
+	s(
+		{ trig = "url", descr = "Create URL" },
+		fmt("󰖟 [link](<>)", { i(1, "Insert link here") }, { delimiters = "<>" })
+	),
 	s(
 		{ trig = "wslopen", descr = "Create file link" },
-		fmt("[[wslopen:<>|<>]]", { i(1, "Relative path"), i(2, "Description") }, { delimiters = "<>" })
+		fmt(" [[wslopen:<>|<>]]", { i(1, "Relative path"), i(2, "Description") }, { delimiters = "<>" })
 	),
 	s(
 		{ trig = "samtal", descr = "Template for phone calls or similar" },
 		fmt(
 			[[
-      # <>samtal med <>, <>
+      # 󰏶 <>samtal med <>, <>
 
       Tid: <> - <>
 
