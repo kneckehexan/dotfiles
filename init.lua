@@ -1,2 +1,2 @@
-require("grr.core")
-require("grr.lazy")
+require("config.lazy")
+-- require("grm.core")
